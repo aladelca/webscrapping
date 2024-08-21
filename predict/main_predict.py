@@ -16,6 +16,6 @@ def main_predict(text):
 def lambda_handler(event, context):
     data = json.loads(json.dumps(event))
     text = data['text']
-    return main_predict(text)
+    return str(main_predict(text))
 
 #print(main_predict(sys.argv[1]))
