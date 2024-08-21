@@ -10,4 +10,4 @@ ENV AWS_DEFAULT_REGION=us-east-1
 COPY predict/. .
 
 ENTRYPOINT []
-CMD [ "main_predict.lambda_handler" ]
+CMD [ "predict.main_predict.lambda_handler" ]
