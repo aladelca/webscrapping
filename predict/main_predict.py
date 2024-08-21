@@ -1,6 +1,7 @@
 from utils.predict import predict
 import sys
 import warnings
+import json
 warnings.filterwarnings("ignore")
 
 
@@ -13,7 +14,8 @@ def main_predict(text):
     return predict(model_path, vect_path, text)
 
 def lambda_handler(event, context):
-    print(event)
-    return 'Hello from Lambda!'
+    data = json.loads(json.dumps(event))
+    text = data['text']
+    return main_predict(text)
 
 #print(main_predict(sys.argv[1]))
