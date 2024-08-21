@@ -7,7 +7,7 @@ from main_predict import main_predict
 
 
 app = FastAPI()
-
+##
 class Text(BaseModel):
     text: str
 
